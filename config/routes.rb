@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :mediators
   root 'refugees#index'
   resources :refugees
   # The priority is based upon order of creation: first created -> highest priority.

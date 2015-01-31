@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131133919) do
+ActiveRecord::Schema.define(version: 20150131162910) do
+
+  create_table "mediators", force: :cascade do |t|
+    t.string   "name"
+    t.string   "firstname"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "organisation_id"
+  end
+
+  add_index "mediators", ["email"], name: "index_mediators_on_email", unique: true
+  add_index "mediators", ["organisation_id"], name: "index_mediators_on_organisation_id"
+  add_index "mediators", ["reset_password_token"], name: "index_mediators_on_reset_password_token", unique: true
+
+  create_table "organisations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "refugees", force: :cascade do |t|
     t.string   "firstname"
@@ -22,6 +51,9 @@ ActiveRecord::Schema.define(version: 20150131133919) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "mediator_id"
   end
+
+  add_index "refugees", ["mediator_id"], name: "index_refugees_on_mediator_id"
 
 end
