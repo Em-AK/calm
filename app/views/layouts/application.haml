@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title Calm
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    - if refugee_signed_in?
+      = current_refugee.email
+      |
+      = link_to t(:logout), destroy_refugee_session_path, method: 'delete'
+    - if mediator_signed_in?
+      = current_mediator.email
+      |
+      = link_to t(:logout), destroy_mediator_session_path, method: 'delete'
+
+    %p{class: "notice"}= notice
+    %p{class: "alert"}= alert
+    = yield
+
