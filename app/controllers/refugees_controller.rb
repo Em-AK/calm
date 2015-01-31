@@ -1,24 +1,16 @@
 class RefugeesController < ApplicationController
   before_action :get_refugee, only: [:show, :edit, :update]
+  before_action :authenticate_refugee!, only: [:profile, :edit, :update]
+  before_action :authenticate_mediator!, only: [:index, :show]
 
   def index
-    Refugee.all
+    @refugees = current_mediator.refugees
+  end
+
+  def profile
   end
 
   def show
-  end
-
-  def new
-    @refugee = Refugee.new
-  end
-
-  def create
-    @refugee = Refugee.new(refugee_params)
-    if @refugee.save
-      redirect_to @refugee
-    else
-      render :new
-    end
   end
 
   def edit
@@ -26,7 +18,7 @@ class RefugeesController < ApplicationController
 
   def update
     if @refugee.update(refugee_params)
-      redirect_to @refugee
+      redirect_to profile_path
     else
       render :edit
     end
@@ -35,7 +27,7 @@ class RefugeesController < ApplicationController
   private
 
   def refugee_params
-    params.require(:refugee).permit(:firstname, :name, :birthday, :nationality, :email, :description)
+    params.require(:refugee).permit(:firstname, :name, :birthday, :nationality, :description)
   end
 
   def get_refugee

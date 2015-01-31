@@ -27,9 +27,11 @@ en:
   nationality: 'Nationality'
   description: 'Description'
   create_profile: 'Create the profile'
+  edit_profile: 'Edit my profile'
   save_profile: 'Save the profile'
   logout: 'Logout'
   sign_in_refugee: 'Sign in as a refugee'
   sign_in_mediator: 'Sign in as a mediator'
+  welcome: 'Welcome home'
 
 

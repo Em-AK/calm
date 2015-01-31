@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#landing'
   get 'pages/landing'
+  get 'profile' => 'refugees#profile'
 
   devise_for :refugees
   devise_for :mediators
