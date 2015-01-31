@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  firstname: 'Firstname'
+  name: 'Name'
+  email: 'Email'
+  birthday: 'Birthday'
+  nationality: 'Nationality'
+  description: 'Description'
+  create_profile: 'Create the profile'
+  save_profile: 'Save the profile'
+
