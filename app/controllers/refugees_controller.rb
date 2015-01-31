@@ -1,7 +1,7 @@
 class RefugeesController < ApplicationController
-  before_action :get_refugee, only: [:show, :edit, :update]
+  before_action :get_refugee, only: [:show, :edit, :update, :confirm, :unconfirm]
   before_action :authenticate_refugee!, only: [:profile, :edit, :update]
-  before_action :authenticate_mediator!, only: [:index, :show]
+  before_action :authenticate_mediator!, only: [:index, :show, :confirm, :unconfirm]
 
   def index
     @refugees = current_mediator.refugees
@@ -26,6 +26,16 @@ class RefugeesController < ApplicationController
     end
   end
 
+  def confirm
+    set_confirmed(true)
+    redirect_to action: :index
+  end
+
+  def unconfirm
+    set_confirmed(false)
+    redirect_to action: :index
+  end
+
   private
 
   def refugee_params
@@ -34,6 +44,12 @@ class RefugeesController < ApplicationController
 
   def get_refugee
     @refugee = Refugee.find(params[:id])
+  end
+
+  def set_confirmed(value)
+    if current_mediator.refugees.include? @refugee
+      @refugee.update(confirmed: value)
+    end
   end
 
 end

@@ -2,4 +2,7 @@
 
 %ul
   - @refugees.each do |refugee|
-    = link_to "#{refugee.name} #{refugee.firstname}", refugee_path(refugee)
+    %li
+      = link_to "#{refugee.name} #{refugee.firstname}", refugee_path(refugee)
+      \-
+      = refugee.confirmed ? t(:profile_valid) : t(:profile_not_valid)

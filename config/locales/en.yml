@@ -33,5 +33,10 @@ en:
   sign_in_refugee: 'Sign in as a refugee'
   sign_in_mediator: 'Sign in as a mediator'
   welcome: 'Welcome home'
+  profile_not_valid: 'Profile not complete'
+  profile_valid: 'Validated'
+  back: 'Back'
+  confirm_profile: 'Validate this profile'
+  unconfirm_profile: 'Invalidate this profile'
 
 

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'pages#landing'
   get 'pages/landing'
   get 'profile' => 'refugees#profile'
+  get 'refugees/:id/confirm' => 'refugees#confirm', as: :confirm_refugee
+  get 'refugees/:id/unconfirm' => 'refugees#unconfirm', as: :unconfirm_refugee
 
   devise_for :refugees
   devise_for :mediators

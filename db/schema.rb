@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131194317) do
+ActiveRecord::Schema.define(version: 20150131223127) do
 
   create_table "mediators", force: :cascade do |t|
     t.string   "name"
@@ -49,18 +49,19 @@ ActiveRecord::Schema.define(version: 20150131194317) do
     t.string   "nationality"
     t.text     "description"
     t.integer  "mediator_id"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "confirmed",              default: false
   end
 
   add_index "refugees", ["email"], name: "index_refugees_on_email", unique: true

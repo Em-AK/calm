@@ -1,2 +1,8 @@
 %h1= @refugee.name
-= link_to 'Back', refugees_path
+- if @refugee.confirmed
+  = link_to t(:unconfirm_profile), unconfirm_refugee_path(@refugee)
+  |
+- else
+  = link_to t(:confirm_profile), confirm_refugee_path(@refugee)
+  |
+= link_to t(:back), refugees_path
