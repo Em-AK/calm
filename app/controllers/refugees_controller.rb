@@ -14,9 +14,11 @@ class RefugeesController < ApplicationController
   end
 
   def edit
+    redirect_to profile_path unless current_refugee == @refugee
   end
 
   def update
+    redirect_to profile_path unless current_refugee == @refugee
     if @refugee.update(refugee_params)
       redirect_to profile_path
     else
@@ -33,4 +35,5 @@ class RefugeesController < ApplicationController
   def get_refugee
     @refugee = Refugee.find(params[:id])
   end
+
 end
