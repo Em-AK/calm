@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  root 'pages#landing'
+  get 'pages/landing'
+
   devise_for :refugees
   devise_for :mediators
-  root 'refugees#index'
   resources :refugees
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
