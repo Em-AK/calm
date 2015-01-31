@@ -5,10 +5,7 @@ class CreateRefugees < ActiveRecord::Migration
       t.string :name
       t.date :birthday
       t.string :nationality
-      t.string :email
       t.text :description
-
-      t.timestamps null: false
     end
   end
 end
