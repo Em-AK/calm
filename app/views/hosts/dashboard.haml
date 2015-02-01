@@ -1,1 +1,6 @@
 %h1= t(:dashboard)
+- if current_host.home
+  = link_to t(:my_home), home_path(current_host.home)
+- else
+  = link_to t(:new_home), new_home_path
+

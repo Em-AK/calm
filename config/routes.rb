@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  get 'homes/new'
+
+  get 'homes/edit'
+
+  get 'homes/index'
+
   devise_for :hosts
   root 'pages#landing'
-  get 'pages/landing'
+
   get 'profile' => 'refugees#profile'
   get 'dashboard' => 'hosts#dashboard'
+
   get 'refugees/:id/confirm' => 'refugees#confirm', as: :confirm_refugee
   get 'refugees/:id/unconfirm' => 'refugees#unconfirm', as: :unconfirm_refugee
 
@@ -11,6 +18,7 @@ Rails.application.routes.draw do
   devise_for :mediators
   resources :refugees
   resources :hosts
+  resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

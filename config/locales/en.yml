@@ -40,5 +40,8 @@ en:
   confirm_profile: 'Validate this profile'
   unconfirm_profile: 'Invalidate this profile'
   dashboard: 'Dashboard'
-
+  new_home: 'Register my Home'
+  my_home: 'My Home'
+  save: 'Save'
+  edit: 'Edit'
 

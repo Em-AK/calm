@@ -1,0 +1,9 @@
+%h1 My Home
+%ul
+  %li
+    = @home.max_guests
+    guest(s) maximum
+  %li= @home.location
+  %li= @home.description
+
+= link_to t(:edit), edit_home_path(@home)

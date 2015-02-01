@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  max_guests: 1
+  location: MyString
+  description: MyText
+
+two:
+  max_guests: 1
+  location: MyString
+  description: MyText
