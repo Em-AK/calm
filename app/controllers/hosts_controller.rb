@@ -1,5 +1,5 @@
 class HostsController < ApplicationController
-  before_action :authenticate_host!
+  before_action :clear_scopes_and_auth_host!
 
   def dashboard
   end

@@ -1,7 +1,7 @@
 class RefugeesController < ApplicationController
   before_action :get_refugee, only: [:show, :edit, :update, :confirm, :unconfirm]
-  before_action :authenticate_refugee!, only: [:profile, :edit, :update]
-  before_action :authenticate_mediator!, only: [:index, :show, :confirm, :unconfirm]
+  before_action :clear_scopes_and_auth_refugee!, only: [:profile, :edit, :update]
+  before_action :clear_scopes_and_auth_mediator!, only: [:index, :show, :confirm, :unconfirm]
 
   def index
     @refugees = current_mediator.refugees
@@ -51,5 +51,6 @@ class RefugeesController < ApplicationController
       @refugee.update(confirmed: value)
     end
   end
+
 
 end
