@@ -1,8 +1,11 @@
-= form_for @home do |f|
-  = f.label :max_guests, t(:max_guests)
-  = f.number_field :max_guests
-  = f.label :location, t(:location)
-  = f.text_field :location
-  = f.label :description, t(:description)
-  = f.text_area :description
-  = f.submit t(:save)
+%ul.list-unstyled
+  = form_for @home do |f|
+    %li= f.label :max_guests, t(:max_guests)
+    %li= f.number_field :max_guests
+    %li= f.label :location, t(:location)
+    %li= f.text_field :location
+    %li= f.label :description, t(:description)
+    %li= f.text_area :description
+    %li
+      = f.submit t(:save), class: 'btn btn-primary'
+      = link_to t(:cancel), home_path(@home)

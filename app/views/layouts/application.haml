@@ -10,7 +10,14 @@
     %nav( class="navbar navbar-default")
       .container
         .navbar-header
-          = link_to 'CALM', root_path, class: 'navbar-brand'
+          - if refugee_signed_in?
+            = link_to 'CALM', profile_path, class: 'navbar-brand'
+          - elsif mediator_signed_in?
+            = link_to 'CALM', refugees_path, class: 'navbar-brand'
+          - elsif host_signed_in?
+            = link_to 'CALM', dashboard_path, class: 'navbar-brand'
+          - else
+            = link_to 'CALM', root_path, class: 'navbar-brand'
           %p.navbar-text Comme à la maison
         .collapse.navbar-collapse
           %ul.navbar-nav.nav.navbar-right
@@ -27,5 +34,7 @@
     .container
       %p{class: "notice"}= notice
       %p{class: "alert"}= alert
-      = yield
+      .row
+        .col-md-6.col-md-offset-3
+          = yield
 
