@@ -1,6 +1,6 @@
 %h1= "#{t(:welcome)} #{current_refugee.name}"
 - if current_refugee.confirmed
-  %p= t(:profile_not_valid)
-- else
   %p= t(:profile_valid)
+- else
+  %p= t(:profile_not_valid)
 = link_to t(:edit_profile), edit_refugee_path(current_refugee)
