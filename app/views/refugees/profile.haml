@@ -1,9 +1,19 @@
 %h1= "#{t(:welcome)} #{current_refugee.name}"
+
+- if @mediator
+  = t(:mediator_contact)
+  = "#{@mediator.name} #{@mediator.firstname} - #{@mediator.email}"
+
 - if current_refugee.confirmed
   %p= t(:profile_valid)
 - else
   %p= t(:profile_not_valid)
+
+= render 'show'
 = link_to t(:edit_profile), edit_refugee_path(current_refugee)
+
 %hr
-- @homes.each do |home|
-  = link_to "#{home.host.email} #{t(:in)} #{home.location}", home_path(home)
+%h2= t(:home_list)
+%ul
+  - @homes.each do |home|
+    %li= link_to "#{home.host.email} #{t(:in)} #{home.location}", home_path(home)

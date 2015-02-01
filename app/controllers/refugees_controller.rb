@@ -9,6 +9,7 @@ class RefugeesController < ApplicationController
 
   def profile
     @homes = Home.all
+    @mediator = Mediator.find(current_refugee.mediator_id)
   end
 
   def show

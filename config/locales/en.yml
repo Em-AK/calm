@@ -34,7 +34,7 @@ en:
   sign_in_mediator: 'Sign in as a mediator'
   sign_in_host: 'Sign in as a host'
   welcome: 'Welcome home'
-  profile_not_valid: 'Profile not complete'
+  profile_not_valid: 'Profile waiting for validation'
   profile_valid: 'Valid profile'
   back: 'Back'
   confirm_profile: 'Validate this profile'
@@ -45,4 +45,7 @@ en:
   save: 'Save'
   edit: 'Edit'
   in: 'in'
+  mediator_contact: 'My mediator contact'
+  home_list: 'Available homes'
+  year_old: 'years old'
 
