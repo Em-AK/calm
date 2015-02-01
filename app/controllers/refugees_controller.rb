@@ -8,6 +8,7 @@ class RefugeesController < ApplicationController
   end
 
   def profile
+    @homes = Home.all
   end
 
   def show

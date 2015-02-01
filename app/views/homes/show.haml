@@ -6,4 +6,5 @@
   %li= @home.location
   %li= @home.description
 
-= link_to t(:edit), edit_home_path(@home)
+- if host_signed_in?
+  = link_to t(:edit), edit_home_path(@home)

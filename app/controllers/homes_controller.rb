@@ -29,9 +29,6 @@ class HomesController < ApplicationController
   def show
   end
 
-  def index
-  end
-
   private
 
   def home_params

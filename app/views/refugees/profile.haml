@@ -4,3 +4,6 @@
 - else
   %p= t(:profile_not_valid)
 = link_to t(:edit_profile), edit_refugee_path(current_refugee)
+%hr
+- @homes.each do |home|
+  = link_to "#{home.host.email} #{t(:in)} #{home.location}", home_path(home)
