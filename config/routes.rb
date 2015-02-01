@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'refugees/:id/confirm' => 'refugees#confirm', as: :confirm_refugee
   get 'refugees/:id/unconfirm' => 'refugees#unconfirm', as: :unconfirm_refugee
+  post 'refugees/:id/add-mediator' => 'refugees#add_mediator', as: :add_mediator
 
   devise_for :refugees
   devise_for :mediators

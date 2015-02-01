@@ -9,16 +9,13 @@
 
     - if refugee_signed_in?
       = current_refugee.email
-      |
-      = link_to t(:logout), destroy_refugee_session_path, method: 'delete'
+      = link_to t(:logout), destroy_refugee_session_path, method: 'delete', class: 'btn btn-default'
     - if mediator_signed_in?
       = current_mediator.email
-      |
-      = link_to t(:logout), destroy_mediator_session_path, method: 'delete'
+      = link_to t(:logout), destroy_mediator_session_path, method: 'delete', class: 'btn btn-default'
     - if host_signed_in?
       = link_to current_host.email, edit_host_path(current_host)
-      |
-      = link_to t(:logout), destroy_host_session_path, method: 'delete'
+      = link_to t(:logout), destroy_host_session_path, method: 'delete', class: 'btn btn-default'
 
     %p{class: "notice"}= notice
     %p{class: "alert"}= alert

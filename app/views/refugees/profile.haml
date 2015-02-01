@@ -3,6 +3,11 @@
 - if @mediator
   = t(:mediator_contact)
   = "#{@mediator.name} #{@mediator.firstname} - #{@mediator.email}"
+- else
+  = form_tag(add_mediator_path(current_refugee))
+  = label_tag :mediator_email, t(:mediator_email)
+  = text_field_tag :mediator_email
+  = submit_tag t(:add_mediator), class: "btn btn-default"
 
 - if current_refugee.confirmed
   %p= t(:profile_valid)
@@ -17,3 +22,4 @@
 %ul
   - @homes.each do |home|
     %li= link_to "#{home.host.email} #{t(:in)} #{home.location}", home_path(home)
+

@@ -8,8 +8,11 @@ class RefugeesController < ApplicationController
   end
 
   def profile
+    @refugee = current_refugee
     @homes = Home.all
-    @mediator = Mediator.find(current_refugee.mediator_id)
+    if @refugee.mediator_id
+      @mediator = Mediator.find(@refugee.mediator_id)
+    end
   end
 
   def show
@@ -36,6 +39,16 @@ class RefugeesController < ApplicationController
   def unconfirm
     set_confirmed(false)
     redirect_to action: :index
+  end
+
+  def add_mediator
+    @mediator = Mediator.find_by(email: params[:mediator_email])
+    if @mediator
+      @mediator.refugees << current_refugee
+      redirect_to profile_path
+    else
+      redirect_to profile_path, alert: t(:mediator_not_found)
+    end
   end
 
   private

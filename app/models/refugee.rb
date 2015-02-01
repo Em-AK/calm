@@ -5,6 +5,6 @@ class Refugee < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def age
-    Date.today.year - birthday.year
+    Date.today.year - birthday.year if birthday
   end
 end
