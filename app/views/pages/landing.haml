@@ -1,6 +1,11 @@
-%h1 Comme À La Maison
-
-= link_to t(:sign_in_refugee), profile_path, class: 'btn btn-primary'
-= link_to t(:sign_in_mediator), refugees_path, class: 'btn btn-primary'
-= link_to t(:sign_in_host), dashboard_path, class: 'btn btn-primary'
+.row
+  .col-md-6.col-md-offset-3
+    = image_tag 'resume.jpg', class: 'img-responsive landing'
+  .col-md-6.col-md-offset-3
+    .col-md-4
+      = link_to t(:sign_in_refugee), profile_path, class: 'btn btn-lg btn-primary btn-block'
+    .col-md-4
+      = link_to t(:sign_in_mediator), refugees_path, class: 'btn btn-default btn-block'
+    .col-md-4
+      = link_to t(:sign_in_host), dashboard_path, class: 'btn btn-lg btn-primary btn-block'
 

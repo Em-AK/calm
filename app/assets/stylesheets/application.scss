@@ -11,6 +11,27 @@
  * file per style scope.
  *
  */
+$navbar-default-bg: rgb(92, 180, 230);
+$navbar-default-color: #fff;
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-bg: #fff;
+$brand-primary: rgb(92, 180, 230);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+  border-radius: 0;
+}
+.navbar-btn.btn-default {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a.btn-link:hover, .navbar-default .navbar-nav > li > a.btn-link:focus {
+  color: #333;
+  background-color: transparent;
+}
+
+.landing {
+  margin-bottom: 25px;
+}

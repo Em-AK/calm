@@ -1,23 +1,31 @@
 !!! 5
 %html
   %head
-    %title C.A.L.M.
+    %title Stay CALM.
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %nav( class="navbar navbar-default")
+      .container
+        .navbar-header
+          = link_to 'CALM', root_path, class: 'navbar-brand'
+          %p.navbar-text Comme à la maison
+        .collapse.navbar-collapse
+          %ul.navbar-nav.nav.navbar-right
+            - if refugee_signed_in?
+              %li= link_to current_refugee.email, profile_path, class: 'btn btn-link navbar-btn'
+              %li= link_to t(:logout), destroy_refugee_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
+            - if mediator_signed_in?
+              %li= link_to current_mediator.email, edit_mediator_path(current_mediator), class: 'btn btn-link navbar-btn'
+              %li= link_to t(:logout), destroy_mediator_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
+            - if host_signed_in?
+              %li= link_to current_host.email, edit_host_path(current_host), class: 'btn btn-link navbar-btn'
+              %li= link_to t(:logout), destroy_host_session_path, method: 'delete', class: 'btn btn-default navbar-btn'
 
-    - if refugee_signed_in?
-      = current_refugee.email
-      = link_to t(:logout), destroy_refugee_session_path, method: 'delete', class: 'btn btn-default'
-    - if mediator_signed_in?
-      = link_to current_mediator.email, edit_mediator_path(current_mediator), class: 'btn btn-link'
-      = link_to t(:logout), destroy_mediator_session_path, method: 'delete', class: 'btn btn-default'
-    - if host_signed_in?
-      = link_to current_host.email, edit_host_path(current_host)
-      = link_to t(:logout), destroy_host_session_path, method: 'delete', class: 'btn btn-default'
-
-    %p{class: "notice"}= notice
-    %p{class: "alert"}= alert
-    = yield
+    .container
+      %p{class: "notice"}= notice
+      %p{class: "alert"}= alert
+      = yield
 
