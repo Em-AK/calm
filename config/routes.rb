@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   devise_for :refugees
   devise_for :mediators
   resources :refugees
+  resources :mediators
   resources :hosts
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.

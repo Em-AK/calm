@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   firstname: 'Firstname'
   name: 'Name'
@@ -36,7 +15,6 @@ en:
   welcome: 'Welcome home'
   profile_not_valid: 'Waiting for validation'
   profile_valid: 'Valid profile'
-  back: 'Back'
   confirm_profile: 'Validate this profile'
   unconfirm_profile: 'Invalidate this profile'
   dashboard: 'Dashboard'
@@ -44,6 +22,8 @@ en:
   my_home: 'My Home'
   save: 'Save'
   edit: 'Edit'
+  cancel: 'Cancel'
+  back: 'Back'
   in: 'in'
   mediator_contact: 'My mediator contact'
   home_list: 'Available homes'
@@ -51,4 +31,5 @@ en:
   add_mediator: 'Add mediator'
   mediator_email: 'Email of my mediator'
   mediator_not_found: 'This mediator can not be found'
+  following: 'Refugees I am following'
 

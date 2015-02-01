@@ -1,0 +1,10 @@
+%h1= t(:edit_profile)
+%ul{ class: 'list-unstyled'}
+  = form_for @mediator do |f|
+    %li= f.label :name
+    %li= f.text_field :name
+    %li= f.label :firstname
+    %li= f.text_field :firstname
+    %li
+      = f.submit t(:save), class: 'btn btn-primary'
+      = link_to t(:cancel), refugees_path, class: 'btn btn-link' 
