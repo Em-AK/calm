@@ -1,0 +1,8 @@
+= form_for @host do |f|
+  = f.label :name, t(:name)
+  = f.text_field :name
+  = f.label :firstname, t(:firstname)
+  = f.text_field :firstname
+  = f.label :bio
+  = f.text_area :bio
+  = f.submit t(:save_profile)
